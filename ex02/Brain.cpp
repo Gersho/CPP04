@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 16:47:02 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/07 18:43:27 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2021/10/07 11:10:57 by kzennoun          #+#    #+#             */
+/*   Updated: 2021/10/07 17:00:51 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Brain.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog()
+Brain::Brain()
 {
-	_type = "Dog";
-	brain = new Brain();
-	std::cout << "Dog default constructor called" << std::endl;
+	std::cout << "Brain default constructor called" << std::endl;
+	int i;
+
+	i = 0;
+	while (i < 100)
+	{
+		ideas[i] = "*brainfart*";
+		i++;
+	}
 }
 
-Dog::Dog( const Dog & src )
+Brain::Brain( const Brain & src )
 {
+	std::cout << "Brain copy constructor called" << std::endl;
 	*this = src;
-	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 
@@ -34,11 +40,9 @@ Dog::Dog( const Dog & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Dog::~Dog()
+Brain::~Brain()
 {
-	//std::cout << "coucou" << std::endl;
-	delete(brain);
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Brain destructor called" << std::endl;
 }
 
 
@@ -46,58 +50,58 @@ Dog::~Dog()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog &				Dog::operator=( Dog const & rhs )
+Brain &				Brain::operator=( Brain const & rhs )
 {
-	std::cout << "Dog operator = called" << std::endl;
+	std::cout << "Brain operator = called" << std::endl;
 	if ( this != &rhs )
 	{
-		Animal::operator=(rhs);
-		// if (brain)
-		// 	delete(brain);
-
-		// delete(brain);
-		// brain = new Brain();
-
-		//this->brain = rhs.brain;
-
 		int i;
-		i = 0;
 
+		i = 0;
 		while (i < 100)
 		{
-			brain->change_idea(i, rhs.brain->get_idea(i));
-			//brain->change_idea(i, "AAAAA");
+			ideas[i] = rhs.get_idea(i);
 			i++;
 		}
-
 	}
 	return *this;
 }
 
+std::ostream &			operator<<( std::ostream & o, Brain const & i )
+{
+	int j;
+	std::cout << "Brain operator << called" << std::endl;
+	j = 0;
+	while (j < 100)
+	{
+		std::cout << i.get_idea(j) << std::endl;
+		j++;
+	}
+
+	return o;
+}
 
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Dog::makeSound() const
-{
-	std::cout << _type << ": MiaouMiaou" << std::endl;
-}
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string Dog::get_idea(int num) const
+std::string Brain::get_idea(int num) const
 {
-	return brain->get_idea(num);
+	return ideas[num];
 }
 
-void	Dog::change_idea(int num, std::string new_idea)
+void	Brain::change_idea(int num, std::string new_idea)
 {
-	brain->change_idea(num, new_idea);
+	ideas[num] = new_idea;
 	return;
 }
+
 
 /* ************************************************************************** */

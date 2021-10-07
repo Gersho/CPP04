@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:47:02 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/07 18:43:27 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/10/07 17:49:09 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog()
+Cat::Cat()
 {
-	_type = "Dog";
+	_type = "Cat";
 	brain = new Brain();
-	std::cout << "Dog default constructor called" << std::endl;
+	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Dog::Dog( const Dog & src )
+Cat::Cat( const Cat & src )
 {
 	*this = src;
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "Cat copy constructor called" << std::endl;
 }
 
 
@@ -34,11 +34,11 @@ Dog::Dog( const Dog & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Dog::~Dog()
+Cat::~Cat()
 {
 	//std::cout << "coucou" << std::endl;
 	delete(brain);
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 
@@ -46,9 +46,9 @@ Dog::~Dog()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog &				Dog::operator=( Dog const & rhs )
+Cat &				Cat::operator=( Cat const & rhs )
 {
-	std::cout << "Dog operator = called" << std::endl;
+	std::cout << "Cat operator = called" << std::endl;
 	if ( this != &rhs )
 	{
 		Animal::operator=(rhs);
@@ -80,7 +80,7 @@ Dog &				Dog::operator=( Dog const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
 	std::cout << _type << ": MiaouMiaou" << std::endl;
 }
@@ -89,12 +89,12 @@ void Dog::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string Dog::get_idea(int num) const
+std::string Cat::get_idea(int num) const
 {
 	return brain->get_idea(num);
 }
 
-void	Dog::change_idea(int num, std::string new_idea)
+void	Cat::change_idea(int num, std::string new_idea)
 {
 	brain->change_idea(num, new_idea);
 	return;
