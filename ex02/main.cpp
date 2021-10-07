@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:38:07 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/07 17:49:36 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/10/07 18:51:34 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 int main()
 {
 	const int size = 6;
-	//Animal** pack = NULL;
-	Animal* pack[size];
+	AAnimal* pack[size];
+	//AAnimal bob = new AAnimal();
 	
 	int i = 0;
 
@@ -58,7 +58,7 @@ int main()
 	//copie les ptr
 	//pack[2] = pack[0];
 
-	//call Animal= operator
+	//call AAnimal= operator
 	//*pack[2] = *pack[0];
 	// pack[2]->operator=(*pack[0]);
 	//*pack[2] = *((Cat*)pack[0]);
@@ -80,7 +80,7 @@ int main()
 	i = 0;
 	while (i < size)
 	{
-		//delete((Animal*)pack[i]);
+		//delete((AAnimal*)pack[i]);
 		delete(pack[i]);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:47:02 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/07 18:43:27 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/10/07 18:47:19 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ Dog &				Dog::operator=( Dog const & rhs )
 	std::cout << "Dog operator = called" << std::endl;
 	if ( this != &rhs )
 	{
-		Animal::operator=(rhs);
+		AAnimal::operator=(rhs);
 		// if (brain)
 		// 	delete(brain);
 
