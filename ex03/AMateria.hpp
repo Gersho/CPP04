@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 16:47:00 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 10:50:20 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2021/10/08 11:37:10 by kzennoun          #+#    #+#             */
+/*   Updated: 2021/10/08 16:17:13 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <iostream>
 # include <string>
+# include "ICharacter.hpp"
 
-class Animal
+class AMateria
 {
 
 	public:
 
-		Animal();
-		Animal( Animal const & src );
-		virtual ~Animal();
+		AMateria();
+		AMateria( AMateria const & src );
+		AMateria(std::string const & type);
+		~AMateria();
 
-		virtual void	makeSound() const;
-		std::string			getType() const;
-		Animal &		operator=( Animal const & rhs );
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
+		AMateria &		operator=( AMateria const & rhs );
+
 	protected:
-		std::string	_type;
-		
+
 	private:
+		std::string	_type;
 
 };
-
-#endif /* ********************************************************** ANIMAL_H */
+#endif /* ******************************************************** AMATERIA_H */

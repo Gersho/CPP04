@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 16:47:04 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 10:44:22 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2021/10/08 13:06:46 by kzennoun          #+#    #+#             */
+/*   Updated: 2021/10/08 16:34:30 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class Cat: public Animal
+class Cure: public AMateria
 {
 
 	public:
 
-		Cat();
-		Cat( Cat const & src );
-		~Cat();
+		Cure();
+		Cure( Cure const & src );
+		~Cure();
 
-		std::string get_idea(int num) const;
-		void	change_idea(int num, std::string new_idea);
-		virtual void	makeSound() const;
-		virtual Cat &		operator=( Cat const & rhs );
+		virtual AMateria* clone() const;
+		virtual void use(ICharacter& target);
+		Cure &		operator=( Cure const & rhs );
 
 	private:
-		Brain* brain;
-		//Brain* brain = NULL;
+
 };
 
-
-#endif /* ************************************************************* CAT_H */
+#endif /* ************************************************************ CURE_H */

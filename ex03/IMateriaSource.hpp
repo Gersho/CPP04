@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 16:47:04 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 10:44:22 by kzennoun         ###   ########lyon.fr   */
+/*   Created: 2021/10/08 11:37:28 by kzennoun          #+#    #+#             */
+/*   Updated: 2021/10/08 16:15:05 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
 
-class Cat: public Animal
+class IMateriaSource
 {
 
 	public:
 
-		Cat();
-		Cat( Cat const & src );
-		~Cat();
+		IMateriaSource();
+		IMateriaSource( IMateriaSource const & src );
+		~IMateriaSource();
 
-		std::string get_idea(int num) const;
-		void	change_idea(int num, std::string new_idea);
-		virtual void	makeSound() const;
-		virtual Cat &		operator=( Cat const & rhs );
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+
+		IMateriaSource &		operator=( IMateriaSource const & rhs );
 
 	private:
-		Brain* brain;
-		//Brain* brain = NULL;
+
 };
 
 
-#endif /* ************************************************************* CAT_H */
+#endif /* ************************************************** IMATERIASOURCE_H */

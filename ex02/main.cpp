@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:38:07 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/07 18:51:34 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/10/08 14:41:09 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int main()
 	//*pack[2] = *((Cat*)pack[0]);
 
 	//call Cat= operator 
-	// ((Cat*)pack[2])->operator=(dynamic_cast<Cat&>(*pack[0]));
+	//((Cat*)pack[2])->operator=(dynamic_cast<Cat&>(*pack[0]));
 	((Cat*)pack[2])->operator=((Cat&)*pack[0]);
 
 
