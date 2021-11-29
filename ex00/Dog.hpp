@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:47:23 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/06 17:27:48 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 17:27:22 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Dog: public Animal
 		Dog( Dog const & src );
 		~Dog();
 
-		virtual void	makeSound() const;
+		void	makeSound() const;
 		Dog &		operator=( Dog const & rhs );
 
 	private:

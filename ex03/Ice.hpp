@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 13:06:52 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 16:34:43 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/10/09 12:28:27 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
+
 
 class Ice: public AMateria
 {

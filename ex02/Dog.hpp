@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:47:23 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/07 18:47:19 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 17:50:37 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class Dog: public AAnimal
 
 	private:
 		Brain* brain;
-		//Brain* brain = NULL;
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:47:04 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 10:44:22 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 17:36:31 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@ class Cat: public Animal
 
 		std::string get_idea(int num) const;
 		void	change_idea(int num, std::string new_idea);
-		virtual void	makeSound() const;
-		virtual Cat &		operator=( Cat const & rhs );
+		void	makeSound() const;
+		Cat &		operator=( Cat const & rhs );
 
 	private:
 		Brain* brain;
-		//Brain* brain = NULL;
 };
 
 

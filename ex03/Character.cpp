@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 16:44:45 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/10/09 12:39:57 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ Character::Character( const Character & src )
 {
 	std::cout << "Character copy constructor called" << std::endl;
 	*this = src;
+}
+
+Character::Character(std::string name): _name(name)
+{
+	std::cout << "Character string constructor called" << std::endl;
 }
 
 

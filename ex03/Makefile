@@ -1,23 +1,28 @@
-SRCS		= AMateria.cpp Character.cpp MateriaSource.cpp Ice.cpp Cure.cpp
+SRCS		= AMateria.cpp Character.cpp MateriaSource.cpp Ice.cpp Cure.cpp main.cpp
 
 
 OBJS			= $(SRCS:.cpp=.o)
 
+DEPS			= $(SRCS:.cpp=.d)
+
 NAME			= ff7
 CC				= clang++
-RM				= rm -f
 CFLAGS			= --std=c++98 -Wall -Wextra -Werror
 
 all:			$(NAME)
 
-%.o: 			%.cpp	AMateria.hpp Character.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp Ice.hpp Cure.hpp
+%.d:			%.cpp
+				$(CC) $(CFLAGS) -MM -MG -MT $(@:%.d=%.o) $< -o $@
+
+%.o: 			%.cpp	%.d
 				$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):		$(OBJS) AMateria.hpp Character.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp Ice.hpp Cure.hpp
-				$(CC) $(CFLAGS) -IAMateria.hpp -ICharacter.hpp -IICharacter.hpp -IIMateriaSource.hpp -IMateriaSource.hpp -ICure.hpp -IIce.hpp -o $(NAME) $(OBJS)
+$(NAME):		$(OBJS)
+				$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean:			
 				$(RM) $(OBJS)
+				$(RM) $(DEPS)
 
 fclean:			clean
 				$(RM) $(NAME)
@@ -25,3 +30,5 @@ fclean:			clean
 re:			fclean all
 
 .PHONY:		re fclean clean all
+
+-include $(DEPS)

@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:47:00 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/06 17:27:27 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 17:01:17 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
 
 		Animal();
 		Animal( Animal const & src );
-		~Animal();
+		virtual ~Animal();
 
 		virtual void	makeSound() const;
 		std::string			getType() const;

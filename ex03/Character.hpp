@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:15 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 15:02:07 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/10/09 12:41:28 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
 
+
 class Character: public ICharacter
 {
 
@@ -25,6 +26,7 @@ class Character: public ICharacter
 
 		Character();
 		Character( Character const & src );
+		Character(std::string name);
 		~Character();
 
 		virtual std::string const & getName() const;

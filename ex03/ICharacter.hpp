@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:21 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 17:02:42 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/10/09 14:25:04 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
-# include "Ice.hpp"
-# include "Cure.hpp"
+// # include "Ice.hpp"
+// # include "Cure.hpp"
+
+class AMateria;
 
 class ICharacter
 {
