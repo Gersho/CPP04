@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:21 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/09 14:25:04 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/02 14:09:58 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
-// # include "Ice.hpp"
-// # include "Cure.hpp"
 
 class AMateria;
 
@@ -25,9 +23,6 @@ class ICharacter
 {
 
 	public:
-
-		ICharacter();
-		ICharacter( ICharacter const & src );
 		virtual ~ICharacter() {}
 		
 		virtual std::string const & getName() const = 0;

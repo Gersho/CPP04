@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 12:45:42 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 16:14:00 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/02 14:16:32 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,10 @@ int main()
 	delete me;
 	delete src;
 	return 0;
+
+	// Ice materia;
+    // std::cout << materia.getType() << std::endl;
+    // AMateria *test;
+    // test = materia.clone();
+    // std::cout << test->getType() << std::endl;
 }
