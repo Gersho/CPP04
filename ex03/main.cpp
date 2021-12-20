@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 12:45:42 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/02 14:16:32 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 14:58:10 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ int main()
 
 	ICharacter* bob = new Character("bob");
 
+	std::cout << std::endl;
 	me->use(0, *bob);
 	me->use(1, *bob);
+	std::cout << std::endl;
 	
 	delete bob;
 	delete me;

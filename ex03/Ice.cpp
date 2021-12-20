@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 13:06:49 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 16:53:24 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 14:58:02 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Ice::Ice(): AMateria("Ice")
+Ice::Ice(): AMateria("ice")
 {
 	std::cout << "Ice default constructor called" << std::endl;
 }

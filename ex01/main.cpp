@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:38:07 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/11/29 17:35:39 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 14:03:56 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ int main()
 	((Cat*)pack[2])->get_idea(0) << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "pack[0]ptr: "<< reinterpret_cast<void *>(pack[0]) << std::endl;	
-	std::cout << "pack[2]ptr: "<< reinterpret_cast<void *>(pack[2]) << std::endl;	
+	std::cout << "pack[0]ptr: "<< &pack[0] << std::endl;	
+	std::cout << "pack[2]ptr: "<< &pack[2] << std::endl;	
 	std::cout << "copy pack[0] to pack[2]" << std::endl;
 
 
 	((Cat*)pack[2])->operator=((Cat&)*pack[0]);
 
 
-	std::cout << "pack[0]ptr: "<< reinterpret_cast<void *>(pack[0]) << std::endl;	
-	std::cout << "pack[2]ptr: "<< reinterpret_cast<void *>(pack[2]) << std::endl;
+	std::cout << "pack[0]ptr: "<< &pack[0] << std::endl;	
+	std::cout << "pack[2]ptr: "<< &pack[2] << std::endl;
 	std::cout << std::endl;	
 	std::cout <<
 	((Cat*)pack[0])->get_idea(0) << std::endl;

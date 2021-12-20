@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:31 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 16:57:10 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 14:49:56 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ MateriaSource::MateriaSource()
 MateriaSource::MateriaSource( const MateriaSource & src )
 {
 	std::cout << "MateriaSource copy constructor called" << std::endl;
+	int i = 0;
+
+	while (i < 4)
+	{
+		storage[i] = NULL;
+		i++;
+	}
 	*this = src;
 }
 
@@ -46,7 +53,8 @@ MateriaSource::~MateriaSource()
 
 	while (i < 4)
 	{
-		delete(storage[i]);
+		if (storage[i])
+			delete(storage[i]);
 		i++;
 	}
 }
@@ -68,7 +76,7 @@ MateriaSource &				MateriaSource::operator=( MateriaSource const & rhs )
 		{
 			if (storage[i] != NULL)
 				delete(storage[i]);
-			*storage[i] = *rhs.storage[i];
+			storage[i] = rhs.storage[i]->clone();
 			i++;
 		}
 	}
@@ -87,7 +95,10 @@ void MateriaSource::learnMateria(AMateria* m)
 	while (i < 4)
 	{
 		if (storage[i] == NULL)
-			storage[i] = m->clone();
+		{
+			storage[i] = m;
+			break ;
+		}
 		i++;
 	}
 }
@@ -98,7 +109,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 
 	while (i < 4)
 	{
-		if (type == storage[i]->getType())
+		if (storage[i] && type == storage[i]->getType())
 		{
 			AMateria* tmp;
 

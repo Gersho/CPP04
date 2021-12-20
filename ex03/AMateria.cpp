@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:06 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/08 17:00:44 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 14:30:00 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,12 @@ AMateria &				AMateria::operator=( AMateria const & rhs )
 void AMateria::use(ICharacter& target)
 {
 	(void)target;
-	return;
+	// std::cout << getType() << std::endl;
+	// if (getType() == "ice")
+	// 	std::cout << "*shoots an ice bolt at " << target.getName() << std::endl;
+	// else if (getType() == "cure")
+	// 	std::cout << "*heals " << target.getName() << "'s wounds*" << std::endl;
+	// return;
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

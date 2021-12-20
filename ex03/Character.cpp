@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/09 12:39:57 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 14:50:43 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,25 @@ Character::Character(): _name("Bob")
 Character::Character( const Character & src )
 {
 	std::cout << "Character copy constructor called" << std::endl;
+	int i = 0;
+
+	while (i < 4)
+	{
+		inv[i] = NULL;
+		i++;
+	}
 	*this = src;
 }
 
 Character::Character(std::string name): _name(name)
 {
+	int i = 0;
+
+	while (i < 4)
+	{
+		inv[i] = NULL;
+		i++;
+	}
 	std::cout << "Character string constructor called" << std::endl;
 }
 
@@ -51,7 +65,8 @@ Character::~Character()
 
 	while (i < 4)
 	{
-		delete(inv[i]);
+		if (inv[i])
+			delete(inv[i]);
 		i++;
 	}
 }
@@ -74,7 +89,7 @@ Character &				Character::operator=( Character const & rhs )
 		{
 			if (inv[i] != NULL)
 				delete(inv[i]);
-			*inv[i] = *rhs.inv[i];
+			inv[i] = rhs.inv[i]->clone();
 			i++;
 		}
 	}
@@ -103,7 +118,8 @@ void Character::equip(AMateria* m)
 		if (inv[i] == NULL)
 		{
 			inv[i] = m;
-			std::cout << "Materia " << m->getType() << " equipped in slot " << i << std::cout;
+			std::cout << "Materia " << m->getType() << " equipped in slot " << i << std::endl;
+			break ;
 		}
 		i++;
 	}
@@ -123,6 +139,12 @@ void Character::use(int idx, ICharacter& target)
 		return;
 
 	inv[idx]->use(target);
+	// std::cout << inv[idx]->getType() << std::endl;
+	// if (getType() == "ice")
+	// 	std::cout << "*shoots an ice bolt at " << target.getName() << std::endl;
+	// else if (getType() == "cure")
+	// 	std::cout << "*heals " << target.getName() << "'s wounds*" << std::endl;
+	// return;
 }
 
 /*
