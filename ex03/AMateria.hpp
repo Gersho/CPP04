@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:10 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/10/09 12:34:59 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 15:28:24 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AMateria
 		AMateria(std::string const & type);
 		virtual ~AMateria();
 
-		std::string const & getType() const; //Returns the materia type
+		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 		AMateria &		operator=( AMateria const & rhs );

@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/20 14:50:43 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 15:28:31 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,12 +139,6 @@ void Character::use(int idx, ICharacter& target)
 		return;
 
 	inv[idx]->use(target);
-	// std::cout << inv[idx]->getType() << std::endl;
-	// if (getType() == "ice")
-	// 	std::cout << "*shoots an ice bolt at " << target.getName() << std::endl;
-	// else if (getType() == "cure")
-	// 	std::cout << "*heals " << target.getName() << "'s wounds*" << std::endl;
-	// return;
 }
 
 /*

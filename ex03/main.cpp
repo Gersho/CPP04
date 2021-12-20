@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 12:45:42 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/20 14:58:10 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 15:29:18 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,4 @@ int main()
 	delete me;
 	delete src;
 	return 0;
-
-	// Ice materia;
-    // std::cout << materia.getType() << std::endl;
-    // AMateria *test;
-    // test = materia.clone();
-    // std::cout << test->getType() << std::endl;
 }
