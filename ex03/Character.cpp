@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:13 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/20 15:28:31 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/22 13:54:22 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ Character &				Character::operator=( Character const & rhs )
 		{
 			if (inv[i] != NULL)
 				delete(inv[i]);
-			inv[i] = rhs.inv[i]->clone();
+			if (rhs.inv[i])
+				inv[i] = rhs.inv[i]->clone();
 			i++;
 		}
 	}

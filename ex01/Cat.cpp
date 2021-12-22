@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:47:02 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/11/29 17:51:06 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/22 13:25:55 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ Cat::Cat()
 
 Cat::Cat( const Cat & src )
 {
-	*this = src;
 	std::cout << "Cat copy constructor called" << std::endl;
+	brain = new Brain();
+	*this = src;
 }
 
 

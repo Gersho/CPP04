@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:10 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/20 15:28:24 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/22 13:31:05 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ class AMateria
 		AMateria &		operator=( AMateria const & rhs );
 
 	protected:
+		std::string	_type;
 
 	private:
-		std::string	_type;
 
 };
 #endif /* ******************************************************** AMATERIA_H */

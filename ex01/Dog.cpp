@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:47:02 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/11/29 17:51:24 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/22 13:26:19 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ Dog::Dog()
 
 Dog::Dog( const Dog & src )
 {
-	*this = src;
 	std::cout << "Dog copy constructor called" << std::endl;
+	brain = new Brain();
+	*this = src;
 }
 
 

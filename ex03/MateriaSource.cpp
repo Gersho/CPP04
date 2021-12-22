@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:37:31 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/20 14:49:56 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/22 14:00:07 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ MateriaSource &				MateriaSource::operator=( MateriaSource const & rhs )
 		{
 			if (storage[i] != NULL)
 				delete(storage[i]);
-			storage[i] = rhs.storage[i]->clone();
+			if (rhs.storage[i])
+				storage[i] = rhs.storage[i]->clone();
 			i++;
 		}
 	}
